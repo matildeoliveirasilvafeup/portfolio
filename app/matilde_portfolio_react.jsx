@@ -1,0 +1,109 @@
+export default function Portfolio() {
+  const projects = [
+    {
+      title: "Mobile App Development",
+      status: "in progress",
+      description: "Ongoing mobile application exploring iterative product development, application architecture and user experience.",
+      link: "https://github.com/matildeoliveirasilvafeup/Mobile-App-Development",
+    },
+    {
+      title: "Fullstack Website Development",
+      status: "done",
+      description: "Full-stack website integrating frontend and backend systems into a functional product-oriented application.",
+      link: "https://github.com/matildeoliveirasilvafeup/Fullstack-Website-Development",
+    },
+    {
+      title: "WebTech Project",
+      status: "done",
+      description: "Web application project focused on architecture, component organisation and end-to-end implementation.",
+      link: "https://github.com/matildeoliveirasilvafeup/WebTechProject",
+    },
+    {
+      title: "Database Project",
+      status: "done",
+      description: "Relational modelling, structured queries and information integrity through database design.",
+      link: "https://github.com/matildeoliveirasilvafeup/Database-Project",
+    },
+    {
+      title: "Delivery Truck Pallet Optimization",
+      status: "done",
+      description: "Optimisation project focused on pallet allocation constraints and analytical modelling.",
+      link: "https://github.com/matildeoliveirasilvafeup/DeliveryTruckPalletOptimization",
+    },
+    {
+      title: "Route Planning Tool",
+      status: "done",
+      description: "Route planning tool focused on computational efficiency and constrained optimisation.",
+      link: "https://github.com/matildeoliveirasilvafeup/RoutePlanningTool",
+    },
+    {
+      title: "RGB Image Processing Pipeline",
+      status: "done",
+      description: "RGB image pipeline exploring computational transformations and structured processing stages.",
+      link: "https://github.com/matildeoliveirasilvafeup/RGB-Image-Processing-Pipeline",
+    },
+    {
+      title: "Game Construction",
+      status: "done",
+      description: "Game development project highlighting interactive systems and application logic design.",
+      link: "https://github.com/matildeoliveirasilvafeup/Game-Construction",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-[#ebe3cf] text-neutral-900 px-8 py-10 md:px-14">
+      <div className="max-w-7xl mx-auto">
+        <header className="mb-10 flex items-end justify-between gap-6">
+          <div>
+            <div className="text-sm uppercase tracking-[0.18em] text-neutral-500 mb-3">
+              Matilde Oliveira Silva · FEUP · LEIC
+            </div>
+            <h1 className="text-5xl md:text-7xl font-semibold tracking-tight text-slate-600">
+              Projects
+            </h1>
+          </div>
+
+          <div className="hidden md:flex gap-4 text-sm text-neutral-600">
+            <a href="https://www.linkedin.com/in/matilde-oliveira-silva-59a83b208/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/matildeoliveirasilvafeup" target="_blank">GitHub</a>
+          </div>
+        </header>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+          {projects.map((project) => (
+            <a
+              key={project.title}
+              href={project.link}
+              target="_blank"
+              className="bg-[#f4eedf] rounded-[28px] p-7 min-h-[260px] shadow-sm hover:-translate-y-1 transition-transform flex flex-col"
+            >
+              <div className="flex items-start justify-between gap-4 mb-5">
+                <h2 className="text-3xl font-semibold tracking-tight text-slate-600 leading-tight max-w-[75%]">
+                  {project.title}
+                </h2>
+
+                <span
+                  className={`text-xs px-4 py-2 rounded-full font-medium whitespace-nowrap ${
+                    project.status === "in progress"
+                      ? "bg-green-300 text-green-900"
+                      : "bg-violet-300 text-violet-900"
+                  }`}
+                >
+                  {project.status}
+                </span>
+              </div>
+
+              <p className="text-neutral-700 leading-relaxed text-base flex-1">
+                {project.description}
+              </p>
+
+              <div className="mt-6 text-xs uppercase tracking-[0.16em] text-neutral-400">
+                GitHub repository
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
