@@ -48,6 +48,12 @@ export default function Portfolio() {
       description: "Game development project highlighting interactive systems and application logic design.",
       link: "https://github.com/matildeoliveirasilvafeup/Game-Construction",
     },
+    {
+      title: "Python Academic Exercises",
+      status: "in progress",
+      description: "Collection of Python exercises, quizzes and small academic projects covering recursion, functional programming, data structures, files and algorithmic problem solving.",
+      link: "https://github.com/matildeoliveirasilvafeup/Python-Academic-Exercises",
+    },
   ];
 
   return (
