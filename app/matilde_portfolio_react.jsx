@@ -1,3 +1,4 @@
+import profilePic from "./assets/foto2.JPG";
 export default function Portfolio() {
   const projects = [
     {
@@ -59,21 +60,36 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-[#ebe3cf] text-neutral-900 px-8 py-10 md:px-14">
       <div className="max-w-7xl mx-auto">
-        <header className="mb-10 flex items-end justify-between gap-6">
-          <div>
-            <div className="text-sm uppercase tracking-[0.18em] text-neutral-500 mb-3">
-              Matilde Oliveira Silva · FEUP · LEIC
-            </div>
-            <h1 className="text-5xl md:text-7xl font-semibold tracking-tight text-slate-600">
-              Projects
-            </h1>
-          </div>
+			  <header className="mb-10 flex items-end justify-between gap-6">
+				  <div className="flex items-center gap-5">
 
-          <div className="hidden md:flex gap-4 text-sm text-neutral-600">
-            <a href="https://www.linkedin.com/in/matilde-oliveira-silva-59a83b208/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/matildeoliveirasilvafeup" target="_blank">GitHub</a>
-          </div>
-        </header>
+					  {/* FOTO DE PERFIL */}
+					  <img
+						  src={profilePic}
+						  alt="Profile"
+						  className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border border-neutral-300 shadow-sm"
+					  />
+
+					  <div>
+						  <div className="text-sm uppercase tracking-[0.18em] text-neutral-500 mb-3">
+							  Matilde Oliveira Silva · FEUP · LEIC
+						  </div>
+
+						  <h1 className="text-5xl md:text-7xl font-semibold tracking-tight text-slate-600">
+							  Projects
+						  </h1>
+					  </div>
+				  </div>
+
+				  <div className="hidden md:flex gap-4 text-sm text-neutral-600">
+					  <a href="https://www.linkedin.com/in/matilde-oliveira-silva-59a83b208/" target="_blank">
+						  LinkedIn
+					  </a>
+					  <a href="https://github.com/matildeoliveirasilvafeup" target="_blank">
+						  GitHub
+					  </a>
+				  </div>
+			  </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {projects.map((project) => (
