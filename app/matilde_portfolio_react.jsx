@@ -1,4 +1,4 @@
-import profilePic from "./assets/foto2.JPG";
+import profilePic from "./assets/foto2.jpg";
 export default function Portfolio() {
   const projects = [
     {
