@@ -50,8 +50,8 @@ export default function Portfolio() {
     },
     {
       title: "Python Academic Exercises",
-      status: "in progress",
-      description: "Collection of Python exercises, quizzes and small academic projects covering recursion, functional programming, data structures, files and algorithmic problem solving.",
+      status: "done",
+      description: "Collection of Academic Python exercises, quizzes covering recursion, functional programming, data structures, files and algorithmic problem solving.",
       link: "https://github.com/matildeoliveirasilvafeup/Python-Academic-Exercises",
     },
   ];
