@@ -1,13 +1,6 @@
 const profilePic = "/foto2.jpg";
 export default function Portfolio() {
   const projects = [
-	  
-	{
-	  title: "Recycling App",
-	  status: "in progress",
-	  description: "Academic project developed for the Software Engineering course (ESOF) at FEUP. A React Native mobile app for recycling management, featuring QR code scanning, eco-points rewards system, seasonal events, and Firebase integration.",
-	  link: "https://github.com/matildeoliveirasilvafeup/recycling-app",
-	},
 
     {
       title: "Mobile App Development",
