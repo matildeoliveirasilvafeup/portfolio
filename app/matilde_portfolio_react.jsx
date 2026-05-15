@@ -244,4 +244,18 @@ export default function Portfolio() {
               </button>
             </div>
             <iframe
-              src="https://drive.google.com/file/d/1JSMBT8zHq-LUr8f9b76w3jI92l
+              src="https://drive.google.com/file/d/1JSMBT8zHq-LUr8f9b76w3jI92lGausLU/preview"
+              className="w-full rounded-2xl"
+              style={{ height: "480px" }}
+              allow="autoplay"
+              allowFullScreen
+            />
+            <p className="mt-4 text-sm text-neutral-500 tracking-wide">
+              Repository not yet public · work in progress
+            </p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
