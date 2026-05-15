@@ -16,6 +16,12 @@ export default function Portfolio() {
       hasDemo: true,
     },
     {
+      title: "Mobile App Development",
+      status: "in progress",
+      description: "Ongoing mobile application exploring iterative product development, application architecture and user experience.",
+      link: "https://github.com/matildeoliveirasilvafeup/Mobile-App-Development",
+    },
+    {
       title: "Fullstack Website Development",
       status: "done",
       description: "Full-stack website integrating frontend and backend systems into a functional product-oriented application.",
