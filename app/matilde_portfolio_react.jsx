@@ -236,6 +236,14 @@ export default function Portfolio() {
 								>
 									<CardContent project={project} />
 									<div className="mt-4 flex items-center gap-3">
+										<button
+											onClick={() => setShowGallery(true)}
+											className="text-xs uppercase tracking-[0.16em] text-neutral-400 hover:text-neutral-600 transition-colors flex items-center gap-1.5"
+										>
+											<span>⊞</span>
+											<span>Watch gallery</span>
+										</button>
+										<span className="text-neutral-300 text-xs">·</span>
 										<a
 											href={project.link}
 											target="_blank"
@@ -244,14 +252,6 @@ export default function Portfolio() {
 										>
 											GitHub repository
 										</a>
-										<span className="text-neutral-300 text-xs">·</span>
-										<button
-											onClick={() => setShowGallery(true)}
-											className="text-xs uppercase tracking-[0.16em] text-neutral-400 hover:text-neutral-600 transition-colors flex items-center gap-1.5"
-										>
-											<span>⊞</span>
-											<span>Gallery</span>
-										</button>
 									</div>
 								</div>
 							);
@@ -342,12 +342,13 @@ export default function Portfolio() {
 
 						{/* Lightbox */}
 						{activePhoto !== null ? (
-							<div className="flex flex-col items-center gap-4 flex-1 overflow-hidden">
-								<div className="flex-1 flex items-center justify-center w-full overflow-hidden">
+							<div className="flex flex-col items-center gap-4">
+								<div className="flex items-center justify-center w-full" style={{ height: "420px" }}>
 									<img
 										src={galleryImages[activePhoto]}
 										alt={`Screenshot ${activePhoto + 1}`}
-										className="max-h-full max-w-full object-contain rounded-2xl"
+										style={{ maxHeight: "420px", maxWidth: "100%", objectFit: "contain" }}
+										className="rounded-2xl"
 									/>
 								</div>
 								<div className="flex items-center gap-4">
