@@ -55,47 +55,48 @@ function LinkedInIcon({ size = 22 }) {
 }
 
 // Polaroid frame component
-function PolaroidPhoto({ src, alt, rotation = "-2deg", className = "" }) {
+function PolaroidPhoto({ src, alt, rotation = "-2deg", width = 240, height = 290 }) {
 	return (
 		<div
-			className={`relative inline-block ${className}`}
-			style={{ transform: `rotate(${rotation})` }}
+			style={{
+				position: "relative",
+				display: "inline-block",
+				transform: `rotate(${rotation})`,
+			}}
 		>
 			{/* Tape strips */}
 			<div
 				style={{
 					position: "absolute",
-					top: "-14px",
-					left: "18%",
-					width: "28%",
-					height: "28px",
-					background: "rgba(180,165,130,0.55)",
+					top: "-13px",
+					left: "15%",
+					width: "30%",
+					height: "26px",
+					background: "rgba(180,165,130,0.52)",
 					borderRadius: "3px",
-					transform: "rotate(-1deg)",
+					transform: "rotate(-1.2deg)",
 					zIndex: 10,
-					backdropFilter: "blur(1px)",
 				}}
 			/>
 			<div
 				style={{
 					position: "absolute",
-					top: "-14px",
-					right: "18%",
-					width: "28%",
-					height: "28px",
-					background: "rgba(180,165,130,0.55)",
+					top: "-13px",
+					right: "15%",
+					width: "30%",
+					height: "26px",
+					background: "rgba(180,165,130,0.52)",
 					borderRadius: "3px",
 					transform: "rotate(1.5deg)",
 					zIndex: 10,
-					backdropFilter: "blur(1px)",
 				}}
 			/>
 			{/* Polaroid card */}
 			<div
 				style={{
 					background: "#fff",
-					padding: "10px 10px 36px 10px",
-					boxShadow: "0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10)",
+					padding: "10px 10px 44px 10px",
+					boxShadow: "0 10px 40px rgba(0,0,0,0.20), 0 2px 8px rgba(0,0,0,0.10)",
 					borderRadius: "3px",
 					display: "inline-block",
 				}}
@@ -105,10 +106,10 @@ function PolaroidPhoto({ src, alt, rotation = "-2deg", className = "" }) {
 					alt={alt}
 					style={{
 						display: "block",
-						width: "100%",
-						height: "100%",
+						width: `${width}px`,
+						height: `${height}px`,
 						objectFit: "cover",
-						objectPosition: "center top",
+						objectPosition: "center 15%",
 					}}
 				/>
 			</div>
@@ -300,19 +301,9 @@ export default function Portfolio() {
 						src={profilePic}
 						alt="Matilde"
 						rotation="-3deg"
-						className=""
-						style={{}}
+						width={240}
+						height={290}
 					/>
-					<style>{`
-						.polaroid-img-wrap {
-							width: 220px;
-							height: 260px;
-						}
-						.polaroid-img-wrap img {
-							width: 220px;
-							height: 260px;
-						}
-					`}</style>
 				</div>
 
 				{/* Text — right side */}
