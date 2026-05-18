@@ -343,7 +343,7 @@ export default function Portfolio() {
 								</p>
 								<div className="my-5 border-t border-[#e0d8c8]" />
 								<p className="text-neutral-700 leading-relaxed text-base">
-									I have a strong foundation in full-stack development, mobile applications and systems design. I care deeply about code quality, user experience and building software that is both technically rigorous and genuinely delightful to use — always looking for the intersection of logic and creativity.
+									I have a strong foundation in full-stack development, mobile applications and systems design. I care deeply about user experience and building software that is genuinely delightful to use — always looking for the intersection of logic and creativity.
 								</p>
 							</div>
 
