@@ -308,10 +308,6 @@ export default function Portfolio() {
 
 				{/* Text — right side */}
 				<div className="flex flex-col items-center md:items-start text-center md:text-left gap-5">
-					<div className="text-sm uppercase tracking-[0.22em] text-neutral-500">
-						FEUP · LEIC
-					</div>
-
 					<h1 className="text-5xl md:text-6xl font-semibold tracking-tight text-slate-600 leading-none">
 						Matilde Oliveira Silva
 					</h1>
