@@ -426,7 +426,7 @@ export default function Portfolio() {
 						<div className="flex flex-col gap-6">
 							<div className="bg-[#f4eedf] rounded-[28px] p-7 shadow-sm">
 								<h2 className="text-xl font-semibold text-slate-600 mb-4 tracking-tight">
-									What drives me ✦
+									What drives me?
 								</h2>
 								<p className="text-neutral-700 leading-relaxed text-base">
 									I love to travel — discovering new places, cultures and the kind of wonder that only comes from stepping into the unknown. That same sense of wonder is what drew me to my biggest dream: designing interactive systems and software for theme park attractions and simulators. The idea of crafting an experience where technology and imagination meet — where someone steps in and genuinely forgets the world outside — is something I find endlessly exciting.
