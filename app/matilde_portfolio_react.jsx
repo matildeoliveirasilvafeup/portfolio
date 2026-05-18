@@ -38,7 +38,6 @@ function LanguageTag({ lang }) {
 	);
 }
 
-// GitHub SVG Icon
 function GitHubIcon({ size = 22 }) {
 	return (
 		<svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -47,12 +46,73 @@ function GitHubIcon({ size = 22 }) {
 	);
 }
 
-// LinkedIn SVG Icon
 function LinkedInIcon({ size = 22 }) {
 	return (
 		<svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
 			<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
 		</svg>
+	);
+}
+
+// Polaroid frame component
+function PolaroidPhoto({ src, alt, rotation = "-2deg", className = "" }) {
+	return (
+		<div
+			className={`relative inline-block ${className}`}
+			style={{ transform: `rotate(${rotation})` }}
+		>
+			{/* Tape strips */}
+			<div
+				style={{
+					position: "absolute",
+					top: "-14px",
+					left: "18%",
+					width: "28%",
+					height: "28px",
+					background: "rgba(180,165,130,0.55)",
+					borderRadius: "3px",
+					transform: "rotate(-1deg)",
+					zIndex: 10,
+					backdropFilter: "blur(1px)",
+				}}
+			/>
+			<div
+				style={{
+					position: "absolute",
+					top: "-14px",
+					right: "18%",
+					width: "28%",
+					height: "28px",
+					background: "rgba(180,165,130,0.55)",
+					borderRadius: "3px",
+					transform: "rotate(1.5deg)",
+					zIndex: 10,
+					backdropFilter: "blur(1px)",
+				}}
+			/>
+			{/* Polaroid card */}
+			<div
+				style={{
+					background: "#fff",
+					padding: "10px 10px 36px 10px",
+					boxShadow: "0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10)",
+					borderRadius: "3px",
+					display: "inline-block",
+				}}
+			>
+				<img
+					src={src}
+					alt={alt}
+					style={{
+						display: "block",
+						width: "100%",
+						height: "100%",
+						objectFit: "cover",
+						objectPosition: "center top",
+					}}
+				/>
+			</div>
+		</div>
 	);
 }
 
@@ -190,7 +250,6 @@ export default function Portfolio() {
 					page === "home" ? "text-amber-600" : "text-neutral-400 hover:text-neutral-700"
 				}`}
 			>
-				{/* home icon */}
 				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
 					<path d="M3 9.75L12 3l9 6.75V21a1 1 0 01-1 1H4a1 1 0 01-1-1V9.75z" />
 					<path d="M9 22V12h6v10" />
@@ -203,7 +262,6 @@ export default function Portfolio() {
 					page === "about" ? "text-amber-600" : "text-neutral-400 hover:text-neutral-700"
 				}`}
 			>
-				{/* person icon */}
 				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
 					<circle cx="12" cy="7" r="4" />
 					<path d="M5.5 21a6.5 6.5 0 0113 0" />
@@ -216,7 +274,6 @@ export default function Portfolio() {
 					page === "projects" ? "text-amber-600" : "text-neutral-400 hover:text-neutral-700"
 				}`}
 			>
-				{/* folder icon */}
 				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
 					<path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" />
 				</svg>
@@ -227,7 +284,6 @@ export default function Portfolio() {
 	// ── HOME PAGE ─────────────────────────────────────────────────────────────
 	const HomePage = () => (
 		<div className="min-h-screen bg-[#ebe3cf] flex flex-col items-center justify-center relative overflow-hidden pl-14">
-			{/* subtle decorative circle */}
 			<div
 				className="absolute right-[-80px] top-[-80px] w-[420px] h-[420px] rounded-full opacity-10"
 				style={{ background: "radial-gradient(circle, #a8937a 0%, transparent 70%)" }}
@@ -237,53 +293,71 @@ export default function Portfolio() {
 				style={{ background: "radial-gradient(circle, #7a8fa8 0%, transparent 70%)" }}
 			/>
 
-			<div className="flex flex-col items-center text-center gap-6 px-6 max-w-xl">
-				<img
-					src={profilePic}
-					alt="Matilde"
-					className="w-24 h-24 rounded-full object-cover border-2 border-[#d4c5a9] shadow-md mb-2"
-				/>
-
-				<div className="text-sm uppercase tracking-[0.22em] text-neutral-500">
-					FEUP · LEIC
+			<div className="flex flex-col md:flex-row items-center gap-12 px-8 max-w-4xl w-full">
+				{/* Polaroid photo — left side */}
+				<div className="flex-shrink-0 flex items-center justify-center" style={{ paddingTop: "20px" }}>
+					<PolaroidPhoto
+						src={profilePic}
+						alt="Matilde"
+						rotation="-3deg"
+						className=""
+						style={{}}
+					/>
+					<style>{`
+						.polaroid-img-wrap {
+							width: 220px;
+							height: 260px;
+						}
+						.polaroid-img-wrap img {
+							width: 220px;
+							height: 260px;
+						}
+					`}</style>
 				</div>
 
-				<h1 className="text-5xl md:text-6xl font-semibold tracking-tight text-slate-600 leading-none">
-					Matilde Oliveira Silva
-				</h1>
+				{/* Text — right side */}
+				<div className="flex flex-col items-center md:items-start text-center md:text-left gap-5">
+					<div className="text-sm uppercase tracking-[0.22em] text-neutral-500">
+						FEUP · LEIC
+					</div>
 
-				<p className="text-neutral-600 text-lg leading-relaxed max-w-sm">
-					<span className="text-amber-700 font-medium">Hello!</span>{" "}
-					I'm a software engineering student building interfaces that are as meaningful as they are beautiful —{" "}
-					<span className="italic">and sometimes a little magical.</span>
-				</p>
+					<h1 className="text-5xl md:text-6xl font-semibold tracking-tight text-slate-600 leading-none">
+						Matilde Oliveira Silva
+					</h1>
 
-				<div className="flex gap-5 mt-2">
-					<a
-						href="https://github.com/matildeoliveirasilvafeup"
-						target="_blank"
-						rel="noreferrer"
-						className="w-11 h-11 rounded-full bg-[#f4eedf] flex items-center justify-center text-neutral-600 hover:text-neutral-900 hover:bg-[#ede3cc] shadow-sm transition-all hover:-translate-y-0.5"
+					<p className="text-neutral-600 text-lg leading-relaxed max-w-sm">
+						<span className="text-amber-700 font-medium">Hello!</span>{" "}
+						I'm a software engineering student building interfaces that are as meaningful as they are beautiful —{" "}
+						<span className="italic">and sometimes a little magical.</span>
+					</p>
+
+					<div className="flex gap-5 mt-1">
+						<a
+							href="https://github.com/matildeoliveirasilvafeup"
+							target="_blank"
+							rel="noreferrer"
+							className="w-11 h-11 rounded-full bg-[#f4eedf] flex items-center justify-center text-neutral-600 hover:text-neutral-900 hover:bg-[#ede3cc] shadow-sm transition-all hover:-translate-y-0.5"
+						>
+							<GitHubIcon />
+						</a>
+						<a
+							href="https://www.linkedin.com/in/matilde-oliveira-silva-59a83b208/"
+							target="_blank"
+							rel="noreferrer"
+							className="w-11 h-11 rounded-full bg-[#f4eedf] flex items-center justify-center text-neutral-600 hover:text-neutral-900 hover:bg-[#ede3cc] shadow-sm transition-all hover:-translate-y-0.5"
+						>
+							<LinkedInIcon />
+						</a>
+					</div>
+
+					<button
+						onClick={() => setPage("projects")}
+						className="mt-2 text-xs uppercase tracking-[0.18em] text-neutral-400 hover:text-neutral-700 transition-colors flex items-center gap-2"
 					>
-						<GitHubIcon />
-					</a>
-					<a
-						href="https://www.linkedin.com/in/matilde-oliveira-silva-59a83b208/"
-						target="_blank"
-						rel="noreferrer"
-						className="w-11 h-11 rounded-full bg-[#f4eedf] flex items-center justify-center text-neutral-600 hover:text-neutral-900 hover:bg-[#ede3cc] shadow-sm transition-all hover:-translate-y-0.5"
-					>
-						<LinkedInIcon />
-					</a>
+						<span>View projects</span>
+						<span>→</span>
+					</button>
 				</div>
-
-				<button
-					onClick={() => setPage("projects")}
-					className="mt-4 text-xs uppercase tracking-[0.18em] text-neutral-400 hover:text-neutral-700 transition-colors flex items-center gap-2"
-				>
-					<span>View projects</span>
-					<span>→</span>
-				</button>
 			</div>
 		</div>
 	);
@@ -295,44 +369,70 @@ export default function Portfolio() {
 	];
 
 	const AboutPage = () => {
-		const [travelActive, setTravelActive] = useState(null);
+		const [travelIdx, setTravelIdx] = useState(0);
+
+		const prev = () => setTravelIdx((i) => (i === 0 ? travelImages.length - 1 : i - 1));
+		const next = () => setTravelIdx((i) => (i === travelImages.length - 1 ? 0 : i + 1));
+
 		return (
 			<div className="min-h-screen bg-[#ebe3cf] px-8 py-14 md:px-14 pl-20">
-				<div className="max-w-5xl mx-auto">
+				<div className="max-w-4xl mx-auto">
 					<h1 className="text-5xl md:text-7xl font-semibold tracking-tight text-slate-600 mb-10">
 						About me
 					</h1>
 
 					<div className="grid md:grid-cols-2 gap-8 items-start">
-						{/* LEFT — profile photo + travel grid */}
-						<div className="flex flex-col gap-4">
-							<div className="bg-[#f4eedf] rounded-[28px] p-5 shadow-sm">
+						{/* LEFT — travel carousel */}
+						<div className="bg-[#f4eedf] rounded-[28px] p-6 shadow-sm flex flex-col gap-4">
+							<p className="text-xs uppercase tracking-[0.18em] text-neutral-400">Travels ✈</p>
+
+							{/* Main carousel image */}
+							<div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-[#ebe3cf]">
 								<img
-									src={profilePic}
-									alt="Matilde"
-									className="w-full rounded-2xl object-cover aspect-[4/5]"
+									key={travelIdx}
+									src={travelImages[travelIdx]}
+									alt={`Travel ${travelIdx + 1}`}
+									className="w-full h-full object-cover"
+									style={{ animation: "fadeIn 0.3s ease" }}
 								/>
 							</div>
 
-							{/* Travel photo grid */}
-							<div className="bg-[#f4eedf] rounded-[28px] p-5 shadow-sm">
-								<p className="text-xs uppercase tracking-[0.18em] text-neutral-400 mb-3">Travels ✈</p>
-								<div className="grid grid-cols-3 gap-2">
-									{travelImages.map((src, idx) => (
-										<button
-											key={idx}
-											onClick={() => setTravelActive(idx)}
-											className="aspect-square rounded-xl overflow-hidden bg-[#ebe3cf] hover:-translate-y-0.5 transition-transform"
-										>
-											<img src={src} alt={`Travel ${idx + 1}`} className="w-full h-full object-cover" />
-										</button>
-									))}
-								</div>
-								<p className="text-[10px] text-neutral-400 mt-2 text-center">click to enlarge</p>
+							{/* Arrow controls */}
+							<div className="flex items-center justify-between px-1">
+								<button
+									onClick={prev}
+									className="w-10 h-10 rounded-full bg-[#ebe3cf] flex items-center justify-center text-neutral-500 hover:text-neutral-800 hover:bg-[#ddd5bf] transition-all text-lg font-light"
+								>
+									←
+								</button>
+								<span className="text-xs text-neutral-400 uppercase tracking-widest">
+									{travelIdx + 1} / {travelImages.length}
+								</span>
+								<button
+									onClick={next}
+									className="w-10 h-10 rounded-full bg-[#ebe3cf] flex items-center justify-center text-neutral-500 hover:text-neutral-800 hover:bg-[#ddd5bf] transition-all text-lg font-light"
+								>
+									→
+								</button>
+							</div>
+
+							{/* Dot indicators */}
+							<div className="flex justify-center gap-1.5">
+								{travelImages.map((_, idx) => (
+									<button
+										key={idx}
+										onClick={() => setTravelIdx(idx)}
+										className={`w-1.5 h-1.5 rounded-full transition-all ${
+											idx === travelIdx
+												? "bg-amber-600 w-4"
+												: "bg-neutral-300 hover:bg-neutral-400"
+										}`}
+									/>
+								))}
 							</div>
 						</div>
 
-						{/* RIGHT — single combined card + CV */}
+						{/* RIGHT — text + CV */}
 						<div className="flex flex-col gap-6">
 							<div className="bg-[#f4eedf] rounded-[28px] p-7 shadow-sm">
 								<h2 className="text-xl font-semibold text-slate-600 mb-4 tracking-tight">
@@ -362,37 +462,12 @@ export default function Portfolio() {
 					</div>
 				</div>
 
-				{/* Travel lightbox */}
-				{travelActive !== null && (
-					<div
-						className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
-						onClick={() => setTravelActive(null)}
-					>
-						<div
-							className="bg-[#f4eedf] rounded-[28px] p-6 w-full max-w-xl shadow-xl flex flex-col items-center gap-4"
-							onClick={(e) => e.stopPropagation()}
-						>
-							<img
-								src={travelImages[travelActive]}
-								alt={`Travel ${travelActive + 1}`}
-								className="rounded-2xl max-h-[60vh] object-contain w-full"
-							/>
-							<div className="flex items-center gap-4">
-								<button
-									onClick={() => setTravelActive((p) => (p === 0 ? travelImages.length - 1 : p - 1))}
-									className="w-10 h-10 rounded-full bg-[#ebe3cf] flex items-center justify-center text-neutral-500 hover:text-neutral-800 transition-colors text-lg"
-								>←</button>
-								<span className="text-xs text-neutral-400 uppercase tracking-widest">
-									{travelActive + 1} / {travelImages.length}
-								</span>
-								<button
-									onClick={() => setTravelActive((p) => (p === travelImages.length - 1 ? 0 : p + 1))}
-									className="w-10 h-10 rounded-full bg-[#ebe3cf] flex items-center justify-center text-neutral-500 hover:text-neutral-800 transition-colors text-lg"
-								>→</button>
-							</div>
-						</div>
-					</div>
-				)}
+				<style>{`
+					@keyframes fadeIn {
+						from { opacity: 0.6; transform: scale(1.01); }
+						to   { opacity: 1;   transform: scale(1); }
+					}
+				`}</style>
 			</div>
 		);
 	};
@@ -402,20 +477,13 @@ export default function Portfolio() {
 		<div className="min-h-screen bg-[#ebe3cf] text-neutral-900 px-8 py-10 md:px-14 pl-20">
 			<div className="max-w-7xl mx-auto">
 				<header className="mb-10 flex items-end justify-between gap-6">
-					<div className="flex items-center gap-5">
-						<img
-							src={profilePic}
-							alt="Profile"
-							className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border border-neutral-300 shadow-sm"
-						/>
-						<div>
-							<div className="text-sm uppercase tracking-[0.18em] text-neutral-500 mb-3">
-								Matilde Oliveira Silva · FEUP · LEIC
-							</div>
-							<h1 className="text-5xl md:text-7xl font-semibold tracking-tight text-slate-600">
-								Projects
-							</h1>
+					<div>
+						<div className="text-sm uppercase tracking-[0.18em] text-neutral-500 mb-3">
+							Matilde Oliveira Silva · FEUP · LEIC
 						</div>
+						<h1 className="text-5xl md:text-7xl font-semibold tracking-tight text-slate-600">
+							Projects
+						</h1>
 					</div>
 					<div className="hidden md:flex gap-4 text-sm text-neutral-600">
 						<a href="https://www.linkedin.com/in/matilde-oliveira-silva-59a83b208/" target="_blank" rel="noreferrer">LinkedIn</a>
