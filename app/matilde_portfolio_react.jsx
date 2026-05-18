@@ -355,9 +355,9 @@ export default function Portfolio() {
 
 	// ── ABOUT PAGE ────────────────────────────────────────────────────────────
 	const travelImages = [
-		"/travel1.jpg", "/travel2.jpg", "/travel3.jpg",
-		"/travel4.jpg", "/travel5.jpg", "/travel6.jpg",
-	];
+    "/foto1.jpeg", "/foto2.jpeg", "/foto3.jpeg",
+    "/foto4.jpeg", "/foto5.jpeg", "/foto6.jpeg",
+];
 
 	const AboutPage = () => {
 		const [travelIdx, setTravelIdx] = useState(0);
@@ -372,13 +372,13 @@ export default function Portfolio() {
 						About me
 					</h1>
 
-					<div className="grid md:grid-cols-2 gap-8 items-start">
+					<div className="grid md:grid-cols-2 gap-8 items-end">
 						{/* LEFT — travel carousel */}
 						<div className="bg-[#f4eedf] rounded-[28px] p-6 shadow-sm flex flex-col gap-4">
 							<p className="text-xs uppercase tracking-[0.18em] text-neutral-400">Travels ✈</p>
 
 							{/* Main carousel image */}
-							<div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-[#ebe3cf]">
+							<div className="relative rounded-2xl overflow-hidden aspect-[3/4] bg-[#ebe3cf]">
 								<img
 									key={travelIdx}
 									src={travelImages[travelIdx]}
