@@ -355,9 +355,9 @@ export default function Portfolio() {
 
 	// ── ABOUT PAGE ────────────────────────────────────────────────────────────
 	const travelImages = [
-		"/travel1.jpg", "/travel2.jpg", "/travel3.jpg",
-		"/travel4.jpg", "/travel5.jpg", "/travel6.jpg",
-	];
+    "/foto1.jpeg", "/foto2.jpeg", "/foto3.jpeg",
+    "/foto4.jpeg", "/foto5.jpeg", "/foto6.jpeg",
+];
 
 	const AboutPage = () => {
 		const [travelIdx, setTravelIdx] = useState(0);
