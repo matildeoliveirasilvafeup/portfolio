@@ -372,7 +372,7 @@ export default function Portfolio() {
 						About me
 					</h1>
 
-					<div className="grid md:grid-cols-2 gap-8 items-start">
+					<div className="grid md:grid-cols-2 gap-8 items-end">
 						{/* LEFT — travel carousel */}
 						<div className="bg-[#f4eedf] rounded-[28px] p-6 shadow-sm flex flex-col gap-4">
 							<p className="text-xs uppercase tracking-[0.18em] text-neutral-400">Travels ✈</p>
