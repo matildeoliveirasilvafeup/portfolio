@@ -317,9 +317,8 @@ export default function Portfolio() {
 					</h1>
 
 					<p className="text-neutral-600 text-lg leading-relaxed max-w-sm">
-						<span className="text-amber-700 font-medium">Hello!</span>{" "}
-						I'm a software engineering student building interfaces that are as meaningful as they are beautiful —{" "}
-						<span className="italic">and sometimes a little magical.</span>
+    				<span className="text-amber-700 font-medium">Hello!</span>{" "}
+   					I'm a Software Engineer passionate about building products that are technically solid and genuinely delightful to use. From full-stack development to mobile applications, I care deeply about the craft — and I'm driven by a vision of software that creates truly immersive, unforgettable experiences.
 					</p>
 
 					<div className="flex gap-5 mt-1">
