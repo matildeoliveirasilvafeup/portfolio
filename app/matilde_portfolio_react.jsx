@@ -308,18 +308,13 @@ export default function Portfolio() {
 
 				{/* Text — right side */}
 				<div className="flex flex-col items-center md:items-start text-center md:text-left gap-5">
-					<div className="text-sm uppercase tracking-[0.22em] text-neutral-500">
-						FEUP · LEIC
-					</div>
-
 					<h1 className="text-5xl md:text-6xl font-semibold tracking-tight text-slate-600 leading-none">
 						Matilde Oliveira Silva
 					</h1>
 
 					<p className="text-neutral-600 text-lg leading-relaxed max-w-sm">
-						<span className="text-amber-700 font-medium">Hello!</span>{" "}
-						I'm a software engineering student building interfaces that are as meaningful as they are beautiful —{" "}
-						<span className="italic">and sometimes a little magical.</span>
+    				<span className="text-amber-700 font-medium">Hello!</span>{" "}
+   					I'm a Software Engineer passionate about building products that are technically solid and genuinely delightful to use. From full-stack development to mobile applications, I care deeply about the craft — and I'm driven by a vision of software that creates truly immersive, unforgettable experiences.
 					</p>
 
 					<div className="flex gap-5 mt-1">
@@ -427,7 +422,7 @@ export default function Portfolio() {
 						<div className="flex flex-col gap-6">
 							<div className="bg-[#f4eedf] rounded-[28px] p-7 shadow-sm">
 								<h2 className="text-xl font-semibold text-slate-600 mb-4 tracking-tight">
-									What drives me ✦
+									What drives me?
 								</h2>
 								<p className="text-neutral-700 leading-relaxed text-base">
 									I love to travel — discovering new places, cultures and the kind of wonder that only comes from stepping into the unknown. That same sense of wonder is what drew me to my biggest dream: designing interactive systems and software for theme park attractions and simulators. The idea of crafting an experience where technology and imagination meet — where someone steps in and genuinely forgets the world outside — is something I find endlessly exciting.
