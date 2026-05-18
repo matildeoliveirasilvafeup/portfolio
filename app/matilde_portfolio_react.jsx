@@ -378,7 +378,7 @@ export default function Portfolio() {
 							<p className="text-xs uppercase tracking-[0.18em] text-neutral-400">Travels ✈</p>
 
 							{/* Main carousel image */}
-							<div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-[#ebe3cf]">
+							<div className="relative rounded-2xl overflow-hidden aspect-[3/4] bg-[#ebe3cf]">
 								<img
 									key={travelIdx}
 									src={travelImages[travelIdx]}
