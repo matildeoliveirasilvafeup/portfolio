@@ -125,7 +125,7 @@ export default function Portfolio() {
 
 	const galleryImages = [
 		"/1.png", "/2.png", "/3.png", "/4.png", "/5.png", "/6.png",
-		"/7.png", "/8.png", "/9.jpg", "/10.jpeg", "/11.jpeg", "/12.jpeg",
+		"/7.png", "/8.png", "/9.jpeg", "/10.jpeg", "/11.jpg", "/12.jpeg",
 		"/13.jpeg", "/14.jpeg",
 	];
 
