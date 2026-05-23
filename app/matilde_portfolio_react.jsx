@@ -129,6 +129,7 @@ export default function Portfolio() {
 		"/13.jpeg", "/14.jpeg",
 	];
 
+
 	const projects = [
 		{
 			title: "Mobile App Development",
@@ -221,11 +222,10 @@ export default function Portfolio() {
 					{project.title}
 				</h2>
 				<span
-					className={`text-xs px-4 py-2 rounded-full font-medium whitespace-nowrap ${
-						project.status === "in progress"
-							? "bg-green-300 text-green-900"
-							: "bg-violet-300 text-violet-900"
-					}`}
+					className={`text-xs px-4 py-2 rounded-full font-medium whitespace-nowrap ${project.status === "in progress"
+						? "bg-green-300 text-green-900"
+						: "bg-violet-300 text-violet-900"
+						}`}
 				>
 					{project.status}
 				</span>
@@ -247,9 +247,8 @@ export default function Portfolio() {
 			<button
 				onClick={() => setPage("home")}
 				title="Home"
-				className={`p-2 rounded-xl transition-colors ${
-					page === "home" ? "text-amber-600" : "text-neutral-400 hover:text-neutral-700"
-				}`}
+				className={`p-2 rounded-xl transition-colors ${page === "home" ? "text-amber-600" : "text-neutral-400 hover:text-neutral-700"
+					}`}
 			>
 				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
 					<path d="M3 9.75L12 3l9 6.75V21a1 1 0 01-1 1H4a1 1 0 01-1-1V9.75z" />
@@ -259,9 +258,8 @@ export default function Portfolio() {
 			<button
 				onClick={() => setPage("about")}
 				title="About"
-				className={`p-2 rounded-xl transition-colors ${
-					page === "about" ? "text-amber-600" : "text-neutral-400 hover:text-neutral-700"
-				}`}
+				className={`p-2 rounded-xl transition-colors ${page === "about" ? "text-amber-600" : "text-neutral-400 hover:text-neutral-700"
+					}`}
 			>
 				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
 					<circle cx="12" cy="7" r="4" />
@@ -271,9 +269,8 @@ export default function Portfolio() {
 			<button
 				onClick={() => setPage("projects")}
 				title="Projects"
-				className={`p-2 rounded-xl transition-colors ${
-					page === "projects" ? "text-amber-600" : "text-neutral-400 hover:text-neutral-700"
-				}`}
+				className={`p-2 rounded-xl transition-colors ${page === "projects" ? "text-amber-600" : "text-neutral-400 hover:text-neutral-700"
+					}`}
 			>
 				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
 					<path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z" />
@@ -313,8 +310,8 @@ export default function Portfolio() {
 					</h1>
 
 					<p className="text-neutral-600 text-lg leading-relaxed max-w-sm">
-    				<span className="text-amber-700 font-medium">Hello!</span>{" "}
-   					I'm a Informatics and Computing Engineer passionate about building products that are technically solid and genuinely delightful to use. From full-stack development to mobile applications, I care deeply about the craft — and I'm driven by a vision of software that creates truly immersive, unforgettable experiences.
+						<span className="text-amber-700 font-medium">Hello!</span>{" "}
+						I'm a Informatics and Computing Engineer passionate about building products that are technically solid and genuinely delightful to use. From full-stack development to mobile applications, I care deeply about the craft — and I'm driven by a vision of software that creates truly immersive, unforgettable experiences.
 					</p>
 
 					<div className="flex gap-5 mt-1">
@@ -350,9 +347,9 @@ export default function Portfolio() {
 
 	// ── ABOUT PAGE ────────────────────────────────────────────────────────────
 	const travelImages = [
-    "/foto1.jpeg", "/foto2.jpeg", "/foto3.jpeg",
-    "/foto4.jpeg", "/foto5.jpeg", "/foto6.jpeg",
-];
+		"/foto1.jpeg", "/foto2.jpeg", "/foto3.jpeg",
+		"/foto4.jpeg", "/foto5.jpeg", "/foto6.jpeg",
+	];
 
 	const AboutPage = () => {
 		const [travelIdx, setTravelIdx] = useState(0);
@@ -408,11 +405,10 @@ export default function Portfolio() {
 									<button
 										key={idx}
 										onClick={() => setTravelIdx(idx)}
-										className={`w-1.5 h-1.5 rounded-full transition-all ${
-											idx === travelIdx
-												? "bg-amber-600 w-4"
-												: "bg-neutral-300 hover:bg-neutral-400"
-										}`}
+										className={`w-1.5 h-1.5 rounded-full transition-all ${idx === travelIdx
+											? "bg-amber-600 w-4"
+											: "bg-neutral-300 hover:bg-neutral-400"
+											}`}
 									/>
 								))}
 							</div>
