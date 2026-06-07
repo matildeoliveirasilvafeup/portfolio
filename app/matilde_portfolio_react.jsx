@@ -151,6 +151,16 @@ export default function Portfolio() {
 			langs: ["Java"],
 		},
 		{
+			title: "2D Minix Stealth Game",
+			status: "done",
+			description:
+				"2D stealth game for Minix. Features custom hardware drivers, VBE graphics, and AI pathfinding.",
+			link: "https://github.com/matildeoliveirasilvafeup/2D-Game-.git",
+			hasDemo: true,
+			videoSrc: "/lcom_projeto_video_demo.mp4",
+			langs: ["C"],
+		},
+		{
 			title: "Fullstack Website Development",
 			status: "done",
 			description:
@@ -205,16 +215,6 @@ export default function Portfolio() {
 				"Game development project highlighting interactive systems and application logic design.",
 			link: "https://github.com/matildeoliveirasilvafeup/Game-Construction",
 			langs: ["Java"],
-		},
-		{
-			title: "2D Minix Stealth Game",
-			status: "done",
-			description:
-				"2D stealth game for Minix. Features custom hardware drivers, VBE graphics, and AI pathfinding.",
-			link: "https://github.com/matildeoliveirasilvafeup/2D-Game-.git",
-			hasDemo: true,
-			videoSrc: "/2d-stealth-minix-demo.mp4",
-			langs: ["C"],
 		},
 		{
 			title: "Python Academic Exercises",
@@ -593,7 +593,7 @@ export default function Portfolio() {
 						)}
 						<p className="mt-4 text-sm text-neutral-500 tracking-wide">
 							{activeDemo.videoSrc
-								? "Demo MP4 carregado localmente."
+								? "Demo MP4 loaded locally."
 								: "Repository not yet public · work in progress"
 							}
 						</p>
