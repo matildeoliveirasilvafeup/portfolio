@@ -14,6 +14,7 @@ const langColors = {
 	PHP: "#4f5d95",
 	SQL: "#e38c00",
 	"C++": "#f34b7d",
+	C: "#555555",
 	Python: "#3572a5",
 	Java: "#b07219",
 	CMake: "#da3434",
@@ -119,7 +120,7 @@ function PolaroidPhoto({ src, alt, rotation = "-2deg", width = 240, height = 290
 
 export default function Portfolio() {
 	const [page, setPage] = useState("home");
-	const [showVideo, setShowVideo] = useState(false);
+	const [activeDemo, setActiveDemo] = useState(null);
 	const [showGallery, setShowGallery] = useState(false);
 	const [activePhoto, setActivePhoto] = useState(null);
 
@@ -204,6 +205,16 @@ export default function Portfolio() {
 				"Game development project highlighting interactive systems and application logic design.",
 			link: "https://github.com/matildeoliveirasilvafeup/Game-Construction",
 			langs: ["Java"],
+		},
+		{
+			title: "2D Minix Stealth Game",
+			status: "done",
+			description:
+				"2D stealth game for Minix. Features custom hardware drivers, VBE graphics, and AI pathfinding.",
+			link: "https://github.com/matildeoliveirasilvafeup/2D-Game-.git",
+			hasDemo: true,
+			videoSrc: "/2d-stealth-minix-demo.mp4",
+			langs: ["C"],
 		},
 		{
 			title: "Python Academic Exercises",
@@ -479,7 +490,7 @@ export default function Portfolio() {
 							return (
 								<button
 									key={i}
-									onClick={() => setShowVideo(true)}
+									onClick={() => setActiveDemo(project)}
 									className="text-left bg-[#f4eedf] rounded-[28px] p-7 min-h-[260px] shadow-sm hover:-translate-y-1 transition-transform flex flex-col"
 								>
 									<CardContent project={project} />
@@ -549,10 +560,10 @@ export default function Portfolio() {
 			{page === "projects" && <ProjectsPage />}
 
 			{/* Video Modal */}
-			{showVideo && (
+			{activeDemo && (
 				<div
 					className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
-					onClick={() => setShowVideo(false)}
+					onClick={() => setActiveDemo(null)}
 				>
 					<div
 						className="bg-[#f4eedf] rounded-[28px] p-6 w-full max-w-3xl shadow-xl"
@@ -560,19 +571,31 @@ export default function Portfolio() {
 					>
 						<div className="flex items-center justify-between mb-4">
 							<h2 className="text-2xl font-semibold tracking-tight text-slate-600">
-								Mobile App Development
+								{activeDemo.title}
 							</h2>
-							<button onClick={() => setShowVideo(false)} className="text-neutral-400 hover:text-neutral-700 text-2xl leading-none">×</button>
+							<button onClick={() => setActiveDemo(null)} className="text-neutral-400 hover:text-neutral-700 text-2xl leading-none">×</button>
 						</div>
-						<iframe
-							src="https://drive.google.com/file/d/1JSMBT8zHq-LUr8f9b76w3jI92lGausLU/preview"
-							className="w-full rounded-2xl"
-							style={{ height: "480px" }}
-							allow="autoplay"
-							allowFullScreen
-						/>
+						{activeDemo.videoSrc ? (
+							<video
+								src={activeDemo.videoSrc}
+								controls
+								className="w-full rounded-2xl"
+								style={{ height: "480px" }}
+							/>
+						) : (
+							<iframe
+								src="https://drive.google.com/file/d/1JSMBT8zHq-LUr8f9b76w3jI92lGausLU/preview"
+								className="w-full rounded-2xl"
+								style={{ height: "480px" }}
+								allow="autoplay"
+								allowFullScreen
+							/>
+						)}
 						<p className="mt-4 text-sm text-neutral-500 tracking-wide">
-							Repository not yet public · work in progress
+							{activeDemo.videoSrc
+								? "Demo MP4 carregado localmente."
+								: "Repository not yet public · work in progress"
+							}
 						</p>
 					</div>
 				</div>
