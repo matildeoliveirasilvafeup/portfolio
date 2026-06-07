@@ -155,7 +155,7 @@ export default function Portfolio() {
 			status: "done",
 			description:
 				"2D stealth game for Minix. Features custom hardware drivers, VBE graphics, and AI pathfinding.",
-			link: "https://github.com/matildeoliveirasilvafeup/2D-Game-.git",
+			link: "https://github.com/matildeoliveirasilvafeup/2D-Game-",
 			hasDemo: true,
 			videoSrc: "/lcom_projeto_video_demo.mp4",
 			langs: ["C"],
@@ -488,17 +488,30 @@ export default function Portfolio() {
 					{projects.map((project, i) => {
 						if (project.hasDemo) {
 							return (
-								<button
+								<div
 									key={i}
-									onClick={() => setActiveDemo(project)}
-									className="text-left bg-[#f4eedf] rounded-[28px] p-7 min-h-[260px] shadow-sm hover:-translate-y-1 transition-transform flex flex-col"
+									className="bg-[#f4eedf] rounded-[28px] p-7 min-h-[260px] shadow-sm flex flex-col"
 								>
 									<CardContent project={project} />
-									<div className="mt-4 flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-neutral-400">
-										<span>▶</span>
-										<span>Watch demo</span>
+									<div className="mt-4 flex items-center gap-3">
+										<button
+											onClick={() => setActiveDemo(project)}
+											className="text-xs uppercase tracking-[0.16em] text-neutral-400 hover:text-neutral-600 transition-colors flex items-center gap-1.5"
+										>
+											<span>▶</span>
+											<span>Watch demo</span>
+										</button>
+										<span className="text-neutral-300 text-xs">·</span>
+										<a
+											href={project.link}
+											target="_blank"
+											rel="noreferrer"
+											className="text-xs uppercase tracking-[0.16em] text-neutral-400 hover:text-neutral-600 transition-colors"
+										>
+											GitHub repository
+										</a>
 									</div>
-								</button>
+								</div>
 							);
 						}
 
