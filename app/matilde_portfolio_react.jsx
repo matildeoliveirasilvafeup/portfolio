@@ -134,7 +134,7 @@ export default function Portfolio() {
 	const projects = [
 		{
 			title: "Mobile App Development",
-			status: "in progress",
+			status: "done",
 			description:
 				"EcoRewards — a gamified recycling app that turns waste delivery into real rewards. Users earn points at collection centers via QR code, track streaks and CO₂ impact, and redeem vouchers at local partners. Built with React Native, Firebase and OpenStreetMap.",
 			link: null,
@@ -143,9 +143,9 @@ export default function Portfolio() {
 		},
 		{
 			title: "Mobile App Development",
-			status: "in progress",
+			status: "done",
 			description:
-				"Ongoing mobile application exploring iterative product development, application architecture and user experience.",
+				"Completed mobile application exploring iterative product development, application architecture and user experience.",
 			link: "https://github.com/matildeoliveirasilvafeup/Mobile-App-Development",
 			hasGallery: true,
 			langs: ["Java"],
@@ -164,8 +164,9 @@ export default function Portfolio() {
 			title: "Fullstack Website Development",
 			status: "done",
 			description:
-				"Full-stack website integrating frontend and backend systems into a functional product-oriented application.",
+				"Full-stack website built for Droplawi, a Portuguese wholesale supplier for vintage and branded clothing. The project presents the company's products, categories, delivery information and booking options through a polished ecommerce experience with custom frontend, backend integration and responsive design.",
 			link: "https://github.com/matildeoliveirasilvafeup/Fullstack-Website-Development",
+			websiteLink: "https://droplawi.com/",
 			langs: ["Liquid", "CSS", "JavaScript"],
 		},
 		{
@@ -486,6 +487,25 @@ export default function Portfolio() {
 
 				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
 					{projects.map((project, i) => {
+						if (project.hasDemo && !project.link) {
+							return (
+								<div
+									key={i}
+									className="bg-[#f4eedf] rounded-[28px] p-7 min-h-[260px] shadow-sm flex flex-col"
+								>
+									<CardContent project={project} />
+									<div className="mt-4 flex items-center gap-3">
+										<button
+											onClick={() => setActiveDemo(project)}
+											className="text-xs uppercase tracking-[0.16em] text-neutral-400 hover:text-neutral-600 transition-colors flex items-center gap-1.5"
+										>
+											<span>Watch demo</span>
+										</button>
+									</div>
+								</div>
+							);
+						}
+
 						if (project.hasDemo) {
 							return (
 								<div
@@ -545,18 +565,35 @@ export default function Portfolio() {
 						}
 
 						return (
-							<a
+							<div
 								key={i}
-								href={project.link}
-								target="_blank"
-								rel="noreferrer"
 								className="bg-[#f4eedf] rounded-[28px] p-7 min-h-[260px] shadow-sm hover:-translate-y-1 transition-transform flex flex-col"
 							>
 								<CardContent project={project} />
-								<div className="mt-4 text-xs uppercase tracking-[0.16em] text-neutral-400">
-									GitHub repository
+								<div className="mt-4 flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.16em] text-neutral-400">
+									{project.websiteLink && (
+										<a
+											href={project.websiteLink}
+											target="_blank"
+											rel="noreferrer"
+											className="hover:text-neutral-600 transition-colors"
+										>
+											Live website
+										</a>
+									)}
+									{project.websiteLink && project.link && (
+										<span className="text-neutral-300">·</span>
+									)}
+									<a
+										href={project.link}
+										target="_blank"
+										rel="noreferrer"
+										className="hover:text-neutral-600 transition-colors"
+									>
+										GitHub repository
+									</a>
 								</div>
-							</a>
+							</div>
 						);
 					})}
 				</div>
