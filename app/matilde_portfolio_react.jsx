@@ -143,7 +143,7 @@ export default function Portfolio() {
 		},
 		{
 			title: "Mobile App Development",
-			status: "done",
+			status: "in progress",
 			description:
 				"Completed mobile application exploring iterative product development, application architecture and user experience.",
 			link: "https://github.com/matildeoliveirasilvafeup/Mobile-App-Development",
