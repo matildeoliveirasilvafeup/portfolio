@@ -295,15 +295,16 @@ export default function Portfolio() {
 	const HomePage = () => (
 		<div className="min-h-screen bg-[#ebe3cf] flex flex-col items-center justify-center relative overflow-hidden pl-14">
 			<div
-				className="absolute right-[-80px] top-[-80px] w-[420px] h-[420px] rounded-full opacity-10"
+				className="absolute pointer-events-none right-[-80px] top-[-80px] w-[420px] h-[420px] rounded-full opacity-10"
 				style={{ background: "radial-gradient(circle, #a8937a 0%, transparent 70%)" }}
 			/>
+
 			<div
-				className="absolute left-[60px] bottom-[40px] w-[200px] h-[200px] rounded-full opacity-10"
+				className="absolute pointer-events-none left-[60px] bottom-[40px] w-[200px] h-[200px] rounded-full opacity-10"
 				style={{ background: "radial-gradient(circle, #7a8fa8 0%, transparent 70%)" }}
 			/>
 
-			<div className="flex flex-col md:flex-row items-center gap-12 px-8 max-w-4xl w-full">
+			<div className="relative z-10 flex flex-col md:flex-row items-center gap-12 px-8 max-w-4xl w-full">
 				{/* Polaroid photo — left side */}
 				<div className="flex-shrink-0 flex items-center justify-center" style={{ paddingTop: "20px" }}>
 					<PolaroidPhoto
@@ -353,7 +354,7 @@ export default function Portfolio() {
 						<span>→</span>
 					</button>
 				</div>
-			</div>
+			</>
 		</div>
 	);
 
@@ -442,8 +443,8 @@ export default function Portfolio() {
 							</div>
 
 							<a
-								href="/CV Resume Matilde Oliveira Silva.pdf"
-								download="CV Resume Matilde Oliveira Silva"
+								href="/cv_MatildeOliveiraSilva.pdf"
+								download="CV_MatildeOliveiraSilva.pdf"
 								className="inline-flex items-center gap-3 self-start bg-slate-600 text-[#f4eedf] px-6 py-3 rounded-full text-sm font-medium tracking-wide hover:bg-slate-700 transition-colors shadow-sm"
 							>
 								<span>Download CV</span>
