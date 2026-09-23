@@ -354,7 +354,7 @@ export default function Portfolio() {
 						<span>→</span>
 					</button>
 				</div>
-			</>
+			</div>
 		</div>
 	);
 
