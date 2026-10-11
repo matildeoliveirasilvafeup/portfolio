@@ -327,6 +327,21 @@ export default function Portfolio() {
 						I'm a Informatics and Computing Engineer passionate about building products that are technically solid and genuinely delightful to use. From full-stack development to mobile applications, I care deeply about the craft — and I'm driven by a vision of software that creates truly immersive, unforgettable experiences.
 					</p>
 
+					<div className="flex flex-col gap-2 text-sm text-neutral-600">
+						<a
+							href="mailto:matilde.oliveira.office@gmail.com"
+							className="hover:text-neutral-900 transition-colors"
+						>
+							matilde.oliveira.office@gmail.com
+						</a>
+						<a
+							href="tel:+351927177685"
+							className="hover:text-neutral-900 transition-colors"
+						>
+							+351 927 177 685
+						</a>
+					</div>
+
 					<div className="flex gap-5 mt-1">
 						<a
 							href="https://github.com/matildeoliveirasilvafeup"
