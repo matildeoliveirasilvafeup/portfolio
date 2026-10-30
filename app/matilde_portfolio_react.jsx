@@ -458,8 +458,8 @@ export default function Portfolio() {
 							</div>
 
 							<a
-								href="/cv_MatildeOliveiraSilva.pdf"
-								download="CV_MatildeOliveiraSilva.pdf"
+								href="/cv_MatildeSilvaCV.pdf"
+								download="CV_MatildeSilvaCV.pdf"
 								className="inline-flex items-center gap-3 self-start bg-slate-600 text-[#f4eedf] px-6 py-3 rounded-full text-sm font-medium tracking-wide hover:bg-slate-700 transition-colors shadow-sm"
 							>
 								<span>Download CV</span>
